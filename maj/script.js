@@ -1,20 +1,32 @@
 function showSection(sectionName) {
 
-    // Get both sections
     const quizzes = document.getElementById("quizzes");
     const activities = document.getElementById("activities");
 
-    // Hide both sections first
+
+    if (sectionName === "about") {
+
+        quizzes.style.display = "block";
+        activities.style.display = "block";
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+        return;
+    }
+
     quizzes.style.display = "none";
     activities.style.display = "none";
 
-    // Show the section that was clicked
     const selectedSection = document.getElementById(sectionName);
 
-    selectedSection.style.display = "block";
+    if (selectedSection) {
+        selectedSection.style.display = "block";
 
-    // Scroll down to the section
-    selectedSection.scrollIntoView({
-        behavior: "smooth"
-    });
+        selectedSection.scrollIntoView({
+            behavior: "smooth"
+        });
+    }
 }
