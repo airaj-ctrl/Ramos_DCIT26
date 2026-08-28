@@ -1,241 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Portfolio</title>
-
-    <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Main Page */
-        body {
+<style>
+        html {
+            margin: 50px;
             padding: 50px;
+            box-sizing: border-box;
+            align-items: center;
+            font:100% Arial, sans-serif;
             text-align: center;
-            background-color: #000000;
-            color: #FFFFFF;
+            background-color:#000000;
+            color:#000000;
         }
-
-        /* Headings */
         h2 {
-            margin-bottom: 15px;
+            color:#ffffff;
         }
-
-        /* Description */
-        .description {
-            margin-top: 15px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        /* Profile Picture */
-        .profile-picture {
+        
+        
+        .pfp {
             width: 170px;
             height: 170px;
-            object-fit: cover;
+
             border-radius: 50%;
-            border: 5px solid white;
-            margin: 20px auto;
+
+            border: 5px solid #ffffff;
+
+            margin-bottom: 20px;
+
             display: block;
+            margin: auto;
         }
 
-        /* Navigation */
         nav {
             background-color: #fbf9f9;
             padding: 10px;
             border-radius: 15px;
             display: flex;
             justify-content: center;
-            margin-bottom: 10px;
         }
-
-        /* Buttons */
-        .button {
-            background-color: #ADD8E6;
-            color: black;
-            padding: 15px 32px;
-            font-size: 16px;
-            margin: 4px;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-
-        /* Quiz Section */
-        .quiz {
+        .quiz{
             background-color: #89CFF0;
-            color: black;
+            color:black;
             padding: 20px;
             border-radius: 15px;
-            margin-top: 10px;
-        }
-
-        /* Activity Section */
-        .act {
-            background-color: #6495ED;
-            color: black;
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 10px;
-        }
-
-        /* Content Box */
-        .content-section {
-            margin: 40px auto;
-            padding: 30px;
-            width: 90%;
-            max-width: 900px;
-            background-color: white;
-            border-radius: 15px;
-            text-align: center;
-        }
-
-        /* Photo Container */
-        .photo-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 25px;
         }
-
-        /* Photo Card */
-        .photo-card {
-            width: 250px;
-            background-color: #f5f5f5;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 4px 10px black;
+        .act {
+            background-color: #6495ED;
+            color:black;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
         }
+         
+        .content-section {
 
-        /* Images inside cards */
-        .photo-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: none;
-            display: block;
-            margin-bottom: 15px;
-        }
+    margin: 40px auto;
+    padding: 30px;
 
-        /* Space between Quiz 1 front and back */
-        .quiz-image {
-            margin-bottom: 15px;
-        }
+    width: 90%;
+    max-width: 900px;
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            body {
-                padding: 20px;
-            }
+    background-color: white;
 
-            .content-section {
-                width: 100%;
-                padding: 20px;
-            }
+    border-radius: 15px;
 
-            .button {
-                padding: 12px 18px;
-            }
-        }
-    </style>
+    text-align: center;
+}
 
-    <script src="./maj/script.js"></script>
-</head>
-
-<body>
-
-    <!-- Introduction -->
-    <header>
-        <h2>Welcome to my portfolio!</h2>
-
-        <img src="./maj/pfp.jpg"
-             alt="Majah Aira Jane B. Ramos"
-             class="profile-picture">
-
-        <h2>Majah Aira Jane B. Ramos</h2>
-
-        <p class="description">
-            Hi! My name is Aira, a 3rd year BSCS student. :)
-        </p>
-    </header>
+.photo-container {
+    width: 150px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 5px;
+   
+}
 
 
-    <!-- Navigation -->
-    <nav>
+.button {
+  background-color: #ADD8E6;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+
+
+
+</style>
+
+<script src="script.js"></script>
+<br>
+<br>
+<br>
+<br>
+<h2>welcome to my portfolio !</h2>
+<div >
+    <div>
+    <button class="button" 
+    onclick="showSection('about me')">about me</button>
+    </div>
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <head>
+
+    <section id="about me" class="content-section">
+    <div class="about me">
+    
+    <img class="pfp"src="pfp.jpg" alt="Majah Aira Jane B. Ramos">
+    <br>
+    <h1>Majah Aira Jane B. Ramos</h1>
+    <p>
+          hi! my name is aira, 3rd year BSCS student. : )
+    </p>
+    </div>
+    </section>
+  </head>
+
+ <nav>
+
         <div>
-            <button class="button" onclick="showSection('about')"> About Me </button>
-            <button class="button" onclick="showSection('quizzes')"> Quizzes </button>
-            <button class="button" onclick="showSection('activities')"> Activities </button>
-        </div>
+    <button class="button"
+    onclick="showSection('quizzes')">quizzes</button>
+    <button class="button"
+    onclick="showSection('activities')">activities</button>
+    </div>
+
+
+
     </nav>
 
+    <nav class="quiz">
+        
+    <section id="quizzes" class="content-section">
 
-    <!-- Quiz Section -->
-    <section class="quiz" id="quizzes">
+    <h2>my quizzes</h2>
+            <h3>quiz 1</h3>
+            <a href="qp1.jpg" target="_blank">
+            <img src="qp1.jpg" alt="Quiz 1" class="photo-container"> 
+           <a href="qp2.jpg" target="_blank">
+            <img src="qp2.jpg" alt="Quiz 2" class="photo-container"> 
+            
+            
 
-        <div class="content-section">
+</section>
 
-            <h2>My Quizzes</h2>
-
-            <div class="photo-container">
-
-                <div class="photo-card">
-
-                    <a href="./maj/qp1.jpg" target="_blank">
-                        <img src="./maj/qp1.jpg"
-                             alt="Quiz 1 Front"
-                             class="quiz-image">
-                    </a>
-
-                    <a href="./maj/qp2.jpg" target="_blank">
-                        <img src="./maj/qp2.jpg"
-                             alt="Quiz 1 Back">
-                    </a>
-
-                    <h3>Quiz 1</h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+</nav>
 
 
-    <!-- Activities Section -->
-    <section class="act" id="activities">
+<nav class="act">
 
-        <div class="content-section">
+<section id="activities" class="content-section">
+    
+    <h3>lab activities</h3>
 
-            <h2>My Activities</h2>
 
-            <div class="photo-container">
+</section>
+</nav>
 
-                <div class="photo-card">
 
-                    <img src="./maj/maj2.jpg"
-                         alt="Activity 1">
-
-                    <h3>Activity 1</h3>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</body>
-
+  
 </html>
