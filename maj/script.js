@@ -1,20 +1,33 @@
-function showSection(sectionName) {
+const sectionLinks = document.querySelectorAll(".section-link");
 
-    // Get both sections
-    const quizzes = document.getElementById("quizzes");
-    const activities = document.getElementById("activities");
+        sectionLinks.forEach(link => {
 
-    // Hide both sections first
-    quizzes.style.display = "none";
-    activities.style.display = "none";
+            link.addEventListener("click", function(event) {
 
-    // Show the section that was clicked
-    const selectedSection = document.getElementById(sectionName);
+                event.preventDefault();
 
-    selectedSection.style.display = "block";
+                const targetId = this.getAttribute("href");
+                const targetSection = document.querySelector(targetId);
 
-    // Scroll down to the section
-    selectedSection.scrollIntoView({
-        behavior: "smooth"
-    });
-}
+                if (targetSection) {
+
+                    const sectionTop = targetSection.getBoundingClientRect().top;
+                    const sectionHeight = targetSection.offsetHeight;
+                    const screenHeight = window.innerHeight;
+
+                    const scrollPosition =
+                        window.scrollY +
+                        sectionTop +
+                        (sectionHeight / 2) -
+                        (screenHeight / 2);
+
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: "smooth"
+                    });
+
+                }
+
+            });
+
+        });
