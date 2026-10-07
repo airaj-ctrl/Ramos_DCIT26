@@ -1,202 +1,489 @@
 <!DOCTYPE html>
-<html>
+<html >
 
-<style>
-        html {
-            margin: 50px;
-            padding: 50px;
+<head>
+    
+
+    <title>my portfolio</title>
+
+    <style>
+
+        /* GENERAL*/
+
+        * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Garamond, serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+
+        /* HEADER */
+
+        header {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            font:100% Arial, sans-serif;
+
             text-align: center;
-            background-color:#000000;
-            color:#000000;
+            padding: 30px 20px;
+
+            background-color: #000000;
         }
-        h2 {
-            color:#ffffff;
+
+        header h1 {
+            color: #ffffff;
+            font-size: 40px;
+            margin-bottom: 20px;
         }
-        
-        
+
+
+        /* NAVIGATION*/
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 500;
+
+            background-color: #000000;
+
+            padding: 15px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            border-bottom: 1px solid #6495ED;
+        }
+
+
+        /* BUTTONS*/
+
+        .button {
+            display: inline-block;
+
+            background-color: #ADD8E6;
+            color: #000000;
+
+            border: none;
+            border-radius: 10px;
+
+            padding: 12px 24px;
+            margin: 5px;
+
+            font-size: 16px;
+            font-weight: bold;
+            font-family: Garamond, serif;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #6495ED;
+            color: #ffffff;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* SECTIONS*/
+
+        .content-section {
+            width: 90%;
+            max-width: 500px;
+
+            min-height: 400px;
+
+            margin: 80px auto;
+            padding: 40px 30px;
+
+            background-color: #000000;
+            color: #ffffff;
+
+            border: 2px solid #6495ED;
+            border-radius: 20px;
+
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 0 0 15px rgba(100, 149, 237, 0.15);
+        }
+
+
+        /* PROFILE*/
+
         .pfp {
             width: 170px;
             height: 170px;
 
+            object-fit: cover;
+
             border-radius: 50%;
 
-            border: 5px solid #ffffff;
+            border: 5px solid #6495ED;
+
+            margin-bottom: 20px;
+        }
+
+        .profile-name {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .profile-description {
+            font-size: 17px;
+            color: #cccccc;
+        }
+
+
+        /* HEADINGS*/
+
+        .content-section h2 {
+            color: #ffffff;
 
             margin-bottom: 20px;
 
+            font-size: 30px;
+        }
+
+        .content-section h3 {
+            color: #ffffff;
+
+            margin: 20px 0 15px;
+        }
+
+
+        /* IMAGE CONTAINER*/
+
+        .image-container {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin-top: 20px;
+        }
+
+
+        /* IMAGE CARDS*/
+
+        .photo-card {
             display: block;
-            margin: auto;
-        }
 
-        nav {
-            background-color: #fbf9f9;
+            background-color: #000000;
+
             padding: 10px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
+
+            border: 2px solid #6495ED;
+
+            border-radius: 12px;
+
+            transition: 0.3s ease;
         }
-        .quiz{
-            background-color: #89CFF0;
-            color:black;
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
+
+        .photo-card:hover {
+            transform: scale(1.03);
+
+            box-shadow: 0 0 15px rgba(100, 149, 237, 0.4);
         }
-        .act {
-            background-color: #6495ED;
-            color:black;
-            padding: 20px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
+
+        .photo {
+            width: 180px;
+            height: 180px;
+
+            object-fit: cover;
+
+            border-radius: 8px;
+
+            display: block;
         }
-         
-        .content-section {
-
-    margin: 40px auto;
-    padding: 30px;
-
-    width: 90%;
-    max-width: 900px;
-
-    background-color: white;
-
-    border-radius: 15px;
-
-    text-align: center;
-}
-
-.photo-container {
-    width: 150px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    padding: 5px;
-   
-}
 
 
-.button {
-  background-color: #ADD8E6;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10px;
-}
+        /* ACTIVITIES*/
+
+        .activity-box {
+            background-color: #000000;
+
+            color: #ffffff;
+
+            padding: 25px;
+
+            border: 2px solid #6495ED;
+
+            border-radius: 15px;
+
+            margin-top: 20px;
+        }
+
+        .activity-box h3 {
+            color: #ADD8E6;
+        }
+
+        .activity-box p {
+            color: #cccccc;
+        }
 
 
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+
+            color: #cccccc;
+
+            padding: 30px 20px;
+
+            margin-top: 50px;
+
+            background-color: #000000;
+        }
 
 
-</style>
+        /*MOBILE */
 
-<script src="./maj/script.js"></script>
-<br>
-<br>
-<br>
-<br>
-<h2>welcome to my portfolio !</h2>
-<div >
-    <div>
-    <button class="button" 
-    onclick="showSection('about me')">about me</button>
-    </div>
-    <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+        @media (max-width: 600px) {
 
-  <head>
+            header h1 {
+                font-size: 30px;
+            }
 
-    <section id="about me" class="content-section">
-    <div class="about me">
-    
-    <img class="pfp"src="./maj/pfp.jpg" alt="Majah Aira Jane B. Ramos">
-    <br>
-    <h1>Majah Aira Jane B. Ramos</h1>
-    <p>
-          hi! my name is aira, 3rd year BSCS student : ).
-    </p>
-    </div>
-    </section>
-  </head>
+            nav {
+                padding: 10px;
+            }
 
- <nav>
+            .button {
+                width: 100%;
+                max-width: 250px;
+            }
 
-        <div>
-    <button class="button"
-    onclick="showSection('quizzes')">quizzes</button>
-    <button class="button"
-    onclick="showSection('exams')">exams</button>
-    <button class="button"
-    onclick="showSection('activities')">activities</button>
-    </div>
+            .content-section {
+                width: 92%;
+                min-height: 400px;
+
+                padding: 30px 20px;
+            }
+
+            .pfp {
+                width: 140px;
+                height: 140px;
+            }
+
+            .photo {
+                width: 150px;
+                height: 150px;
+            }
+
+        }
+
+    </style>
+</head>
 
 
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <h1>
+            welcome to my portfolio!
+        </h1>
+
+        <a href="#profile" class="button section-link">
+            about me
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="#profile" class="button section-link">
+            profile
+        </a>
+
+        <a href="#quizzes" class="button section-link">
+            quizzes
+        </a>
+
+        <a href="#exams" class="button section-link">
+            exams
+        </a>
+
+        <a href="#activities" class="button section-link">
+            activities
+        </a>
 
     </nav>
 
-    <nav class="quiz">
-        
+
+    <!-- =========================
+         PROFILE
+    ========================= -->
+
+    <section id="profile" class="content-section">
+
+        <img
+            src="./maj/pfp.jpg"
+            alt="Profile picture of Majah Aira Jane B. Ramos"
+            class="pfp"
+        >
+
+        <h2 class="profile-name">
+            Majah Aira Jane B. Ramos
+        </h2>
+
+        <p class="profile-description">
+            hi! my name is aira, a 3rd year BSCS student :).
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         QUIZZES
+    ========================= -->
+
     <section id="quizzes" class="content-section">
 
-    <h2>my quizzes</h2>
-            <h3>quiz 1</h3>
-            <a href="./maj/qp1.jpg" target="_blank">
-            <img src="./maj/qp1.jpg" alt="Quiz 1" class="photo-container"> 
-           <a href="./maj/qp2.jpg" target="_blank">
-            <img src="./maj/qp2.jpg" alt="Quiz 2" class="photo-container"> 
-            
-            
+        <h2>
+            my quizzes
+        </h2>
 
-</section>
+        <h3>
+            quiz 1
+        </h3>
 
-</nav>
+        <div class="image-container">
 
-<nav class="exam">
-        
+            <a
+                href="./maj/qp1.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="photo-card"
+            >
+                <img
+                    src="./maj/qp1.jpg"
+                    alt="Quiz 1 Page 1"
+                    class="photo"
+                >
+            </a>
+
+
+            <a
+                href="./maj/qp2.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="photo-card"
+            >
+                <img
+                    src="./maj/qp2.jpg"
+                    alt="Quiz 1 Page 2"
+                    class="photo"
+                >
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXAMS
+    ========================= -->
+
     <section id="exams" class="content-section">
 
-    <h2>my exams</h2>
-        <h3>midterms</h3>
-        <a href="./maj/midterms.jpg" target="_blank">
-        <img src="./maj/midterms.jpg" alt="Midterms" class="photo-container">  
+        <h2>
+            my exams
+        </h2>
 
-</section>
+        <h3>
+            midterms
+        </h3>
 
-</nav>
+        <div class="image-container">
+
+            <a
+                href="./maj/midterms.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="photo-card"
+            >
+
+                <img
+                    src="./maj/midterms.jpg"
+                    alt="Midterm Exam"
+                    class="photo"
+                >
+
+            </a>
+
+        </div>
+
+    </section>
 
 
-<nav class="act">
+    <!-- =========================
+         ACTIVITIES
+    ========================= -->
 
-<section id="activities" class="content-section">
-    
-    <h3>lab activities</h3>
+    <section id="activities" class="content-section">
+
+        <h2>
+            my activities
+        </h2>
+
+        <div class="activity-box">
+
+            <h3>
+                lab activities
+            </h3>
+
+            <p>
+                This section contains my laboratory activities.
+            </p>
+
+        </div>
+
+    </section>
 
 
-</section>
-</nav>
+</body>
 
-
-  
 </html>
+```
